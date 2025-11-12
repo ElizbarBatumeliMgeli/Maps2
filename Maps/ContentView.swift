@@ -2,20 +2,15 @@
 //  ContentView.swift
 //  Maps
 //
-//  Created by Antimo Bucciero on 12/11/25.
+//  Created by Antimo Bucciero on 11/11/25.
 //
-
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var locationManager = LocationManager()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        MapView(locationManager: locationManager)
     }
 }
 
